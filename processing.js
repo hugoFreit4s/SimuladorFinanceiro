@@ -111,8 +111,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const boletosEmitidos = localStorage.getItem('boletos-emitidos');
         const boletosLiquidadosPorcentagem = localStorage.getItem('titulos-liquidados');
         const boletosLiquidadosQtd = (boletosLiquidadosPorcentagem * boletosEmitidos) / 100;
+
+        const receitaEstimadaFloat = (saldoMedio * parseFloat($("#taxa-cdi-auferida").val())) / 100;
+        console.log($('#taxa-cdi-auferida').val());
+
         $('#saldo-medio').text(saldoMedio);
         $('#dias-de-float').text(diasDeFloat);
+        $('#receita-estimada-float').text(parseFloat(receitaEstimadaFloat.toFixed(3)));
         $('#quantidade-boletos-liquidados').text(parseInt(boletosLiquidadosQtd));
 
         enableCheckboxes();
