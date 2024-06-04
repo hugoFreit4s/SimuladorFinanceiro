@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #00AE9D;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.home-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: #003641;
+}
+
+.form-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #003641;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.option-group {
+  margin-bottom: 20px;
+}
+.option-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.option-group input[type=checkbox] {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.option-group .input-set {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #00AE9D;
+  border-radius: 10px;
+  display: none;
+}
+.option-group .input-set .input-group {
+  margin-bottom: 20px;
+}
+.option-group .input-set .input-group label {
+  display: block;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.option-group .input-set .input-group input[type=text] {
+  width: calc(100% - 25px);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #C9D200;
+  color: #003641;
+}
+.option-group .input-set .input-group input[type=checkbox] {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.option-group .input-set .erase-container {
+  text-align: right;
+  margin-bottom: 10px;
+}
+.option-group .input-set .erase-icon {
+  cursor: pointer;
+  font-size: 18px;
+  color: #C9D200;
+  transition: color 0.3s;
+}
+.option-group .input-set .erase-icon:hover {
+  color: #7DB61C;
+}
+
+#calculate-button {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-top: 30px;
+  background-color: #C9D200;
+  color: #003641;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#calculate-button:hover {
+  background-color: #7DB61C;
+}
+
+.home-link svg:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 600px) {
+  .form-container {
+    padding: 10px;
+  }
+}
+
+/*# sourceMappingURL=form.css.map */

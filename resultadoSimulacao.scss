@@ -1,0 +1,195 @@
+// investimento.scss
+$primary-color: #00AE9D;
+$secondary-color: #003641;
+$button-color: #C9D200;
+$button-hover-color: #7DB61C;
+$text-color: #ffffff;
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: $primary-color;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: $text-color;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+button {
+    background-color: $button-color;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    color: $secondary-color;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    margin: 0.5rem;
+}
+
+button:hover {
+    background-color: $button-hover-color;
+}
+
+.form-container {
+    background-color: $secondary-color;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 2rem auto;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.info-group {
+    margin-bottom: 1.5rem;
+}
+
+.info-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.info-group input[type="number"],
+.info-group input[type="text"] {
+    width: calc(100% - 16px);
+    padding: 0.5rem;
+    border: 1px solid $button-color;
+    border-radius: 5px;
+    color: $secondary-color;
+}
+
+.info-group p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.info-group span {
+    display: block;
+    padding: 0.5rem;
+    background-color: $button-color;
+    color: $secondary-color;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.home-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: $secondary-color;
+}
+
+.home-link svg {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.home-link svg:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+}
+
+hr.rounded {
+    border-top: 4px solid #ffffff;
+    border-radius: 5px;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: $secondary-color;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.option-group {
+    margin-bottom: 20px;
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: $text-color;
+    }
+
+    input[type="checkbox"] {
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .input-set {
+        margin-top: 10px;
+        padding: 20px;
+        background-color: $primary-color;
+        border-radius: 10px;
+        display: none;
+
+        .input-group {
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                margin-bottom: 10px;
+                color: $text-color;
+                font-weight: bold;
+            }
+
+            input[type="text"], input[type="number"] {
+                width: calc(100% - 25px);
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid $button-color;
+                color: $secondary-color;
+            }
+
+            input[type="checkbox"] {
+                cursor: pointer;
+                margin-right: 10px;
+            }
+        }
+
+        .erase-container {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .erase-icon {
+            cursor: pointer;
+            font-size: 18px;
+            color: $button-color;
+            transition: color 0.3s;
+        }
+
+        .erase-icon:hover {
+            color: $button-hover-color;
+        }
+    }
+}

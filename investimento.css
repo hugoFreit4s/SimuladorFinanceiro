@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #00AE9D;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+button {
+  background-color: #C9D200;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  color: #003641;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+button:hover {
+  background-color: #7DB61C;
+}
+
+.form-container {
+  background-color: #003641;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  margin: 2rem auto;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.info-group {
+  margin-bottom: 1.5rem;
+}
+
+.info-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.info-group input[type=number],
+.info-group input[type=text] {
+  width: calc(100% - 16px);
+  padding: 0.5rem;
+  border: 1px solid #C9D200;
+  border-radius: 5px;
+  color: #003641;
+}
+
+.info-group p {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.info-group span {
+  display: block;
+  padding: 0.5rem;
+  background-color: #C9D200;
+  color: #003641;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.home-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: #003641;
+}
+
+.home-link svg {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.home-link svg:hover {
+  transform: scale(1.1);
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=investimento.css.map */
