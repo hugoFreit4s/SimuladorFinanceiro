@@ -20,13 +20,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    async function exibicaoTaxaCDI() {
+    async function exibicaoTaxaCDI/*E Receita Estimada Float*/() {
         try {
             const response = await fetch('https://api.bcb.gov.br/dados/serie/bcdata.sgs.1178/dados/ultimos/1?formato=json');
             const data = await response.json();
             const taxaAnual = data[0].valor;
             let taxaMensal = taxaAnual / 12;
             let taxaDiaria = taxaMensal / 22;
+            const saldoMedio = localStorage.getItem('saldoMedio');
+
+            const receitaEstimadaFloat = (saldoMedio * taxaDiaria) / 100;
+            $('#receita-estimada-float').text(parseFloat(receitaEstimadaFloat.toLocaleString("pt-BR")).toFixed(2));
+            let oi = $('#taxa-cdi-auferida').val();
+            console.log(oi);
 
             taxaMensal = taxaMensal.toFixed(4);
             taxaDiaria = taxaDiaria.toFixed(4);
@@ -112,12 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const boletosLiquidadosPorcentagem = localStorage.getItem('titulos-liquidados');
         const boletosLiquidadosQtd = (boletosLiquidadosPorcentagem * boletosEmitidos) / 100;
 
-        const receitaEstimadaFloat = (saldoMedio * parseFloat($("#taxa-cdi-auferida").val())) / 100;
-        console.log($('#taxa-cdi-auferida').val());
-
         $('#saldo-medio').text(saldoMedio);
         $('#dias-de-float').text(diasDeFloat);
-        $('#receita-estimada-float').text(parseFloat(receitaEstimadaFloat.toFixed(3)));
         $('#quantidade-boletos-liquidados').text(parseInt(boletosLiquidadosQtd));
 
         enableCheckboxes();
