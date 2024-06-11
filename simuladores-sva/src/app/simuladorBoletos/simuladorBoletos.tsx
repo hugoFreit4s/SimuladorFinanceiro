@@ -1,6 +1,8 @@
 const simuladorBoletos = () => {
-    return(
-        <div>sas</div>
+    return (
+        <div>
+            <h1>sas</h1>
+        </div>
     )
 }
 
