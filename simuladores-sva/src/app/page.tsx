@@ -1,8 +1,8 @@
 'use client';
 
 import Image from "next/image";
-import LoginForm from "../app/components/loginform";
-import React, {useState} from 'react';
+import LoginForm from "./components/loginform";
+import React from 'react';
 
 export default function Home() {
   return (
