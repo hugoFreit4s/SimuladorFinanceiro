@@ -1,3 +1,5 @@
+import React from "react";
+
 interface InputChartProps {
     title: string;
     id: string;
@@ -6,10 +8,10 @@ interface InputChartProps {
 
 
 const InputChart: React.FC<InputChartProps> = (props: InputChartProps) => {
-    return(
+    return (
         <div className="w-full my-2">
-            <h1 className="text-base text-[#FFFFFF]">{props.title}</h1>
-            <input type="number" id={props.id} disabled={props.disabled} className={`flex text-center w-full h-10 bg-[#00A099] rounded-md h-10 ${props.disabled ? 'text-black bg-[#a6b5b3]' : 'bg-[#00A091]'}`}/>
+            <h1 className="text-base text-[#FFFFFF]">{props.title}*</h1>
+            <input type="number" placeholder="Insira o valor" min={0} max={100} id={props.id} disabled={props.disabled} className={`flex text-center w-full h-10 placeholder-black bg-[#00A099] rounded-md h-10 ${props.disabled ? 'text-black bg-[#a6b5b3]' : 'bg-[#00A091]'}`} />
         </div>
     )
 }

@@ -5,8 +5,17 @@ interface ButtonsProps {
 }
 
 const Buttons: React.FC<ButtonsProps> = (props: ButtonsProps) => {
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleClick = () => {
+        setIsClicked(true);
+        setTimeout(() => {
+            setIsClicked(false)
+        }, 100);
+    };
+
     return (
-        <button className="bg-[#C9D200] hover:bg-[#DBE202] text-white font-bold py-2 px-4 border-b-4 border-[#8C9100] hover:border-[#7D8201] rounded">{props.text}</button>
+        <button onClick={handleClick} className={`w-[40%] self-center lg:w-[20%] bg-[#C9D200] hover:bg-[#DBE202] text-white font-bold py-2 px-4 border-b-4 border-[#8C9100] hover:border-[#7D8201] rounded ${isClicked ? 'border-b-0 mt-3' : 'mt-2'}`}>{props.text}</button>
     )
 }
 
