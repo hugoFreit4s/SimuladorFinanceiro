@@ -29,14 +29,18 @@ export default function Home() {
       <InfoChart title="(III) % Taxa % CDI no ano (a.a)" id="pctgmTaxaCdiAno" chartData={13.75} disabled={isDisabled} />
       <InputChart title="(IV) Dias de Float" id="diasFloat" disabled={isDisabled} />
       <InputChart title="A.5) Ticket-Médio da Carteira" id="ticketMedio" disabled={isDisabled} />
-      <div className="inline-flex items-center justify-center w-full lg:my-56 my-10">
+
+      <hr className="w-full h-1 my-0 border-0 rounded bg-white my-10 lg:my-20"/>
+
+      <h2 className="font-sans text-1xl lg:text-3xl font-md text-[#FFFFFF] self-center mt-4 lg:my-10">SIMULAÇÃO DE PRODUTOS</h2>
+      <Buttons text="SIMULAR" />
+
+      <div className="inline-flex items-center justify-center w-full lg:my-56 my-10 order-last">
         <hr className="w-full h-1 my-0 bg-black-200 border-0 rounded dark:bg-white" />
-          <div className="flex justify-center items-center absolute -translate-x-1/2 bg-white left-1/2 h-[50px] lg:h-[100px] dark:bg-white rounded-md w-[40%]">
-            <img src="sicoob-vector-logo.svg" alt="" className="h-[80px] lg:h-[100px] text-red-500 mx-auto" />
+          <div className="flex justify-center items-center absolute -translate-x-1/2 bg-white left-1/2 h-[50px] lg:h-[100px] dark:bg-[#003641] rounded-md w-[40%]">
+            <img src="Logo All White.png" alt="" className="h-[60px] lg:h-[200px] text-red-500 mx-auto" />
           </div>
       </div>
-      <h2 className="font-sans text-1xl lg:text-3xl font-md text-[#FFFFFF] self-center mt-4 lg:mt-10">SIMULAÇÃO DE PRODUTOS</h2>
-      <Buttons text="SIMULAR" />
     </main>
   );
-}
+};
