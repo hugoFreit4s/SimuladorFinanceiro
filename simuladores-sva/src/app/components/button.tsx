@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface ButtonsProps {
     text: string;
@@ -6,12 +7,14 @@ interface ButtonsProps {
 
 const Buttons: React.FC<ButtonsProps> = (props: ButtonsProps) => {
     const [isClicked, setIsClicked] = useState(false);
+    const router = useRouter();
 
     const handleClick = () => {
         setIsClicked(true);
         setTimeout(() => {
             setIsClicked(false)
         }, 100);
+        router.push('/simuladorProdutos')
     };
 
     return (
