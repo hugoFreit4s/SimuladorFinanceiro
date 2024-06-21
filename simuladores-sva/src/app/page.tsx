@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import InfoChart from "./components/infochart";
-import InputChart from "./components/inputchart";
-import CheckSimulation from "./components/isSimulated";
-import Buttons from "./components/button";
+import InfoChart from "./components/Infochart";
+import InputChart from "./components/Inputchart";
+import CheckSimulation from "./components/IsSimulated";
+import Buttons from "./components/Button";
+import Footer from './components/Footer';
 
 export default function Home() {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -29,14 +30,8 @@ export default function Home() {
       <InputChart title="(IV) Dias de Float" id="diasFloat" disabled={isDisabled} />
       <InputChart title="A.5) Ticket-Médio da Carteira" id="ticketMedio" disabled={isDisabled} />
       
-      <Buttons text="PRÓXIMA ETAPA" />
-
-      <div className="inline-flex items-center justify-center w-full lg:my-56 my-10 order-last">
-        <hr className="w-full h-1 my-0 bg-black-200 border-0 rounded dark:bg-white" />
-          <div className="flex justify-center items-center absolute -translate-x-1/2 bg-white left-1/2 h-[50px] lg:h-[100px] dark:bg-[#003641] rounded-md w-[40%]">
-            <img src="Logo All White.png" alt="" className="h-[60px] lg:h-[200px] text-red-500 mx-auto" />
-          </div>
-      </div>
+      <Buttons text="PRÓXIMA ETAPA" route='./simuladorProdutos'/>
+      <Footer />
     </main>
   );
 };
