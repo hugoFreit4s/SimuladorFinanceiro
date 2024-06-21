@@ -3,10 +3,15 @@ import React, { useState, useRef, useEffect } from 'react';
 
 interface DropdownProps {
     titleText: string;
-    inputPlaceholders: string[];
+    items: Array<{
+        type: 'input' | 'card';
+        title: string;
+        placeholder?: string;
+        content?: string;
+    }>;
 }
 
-const DropdownMenu: React.FC<DropdownProps> = ({ titleText, inputPlaceholders }) => {
+const DropdownMenu: React.FC<DropdownProps> = ({ titleText, items }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [maxHeight, setMaxHeight] = useState('0px');
     const contentRef = useRef<HTMLDivElement>(null);
@@ -22,25 +27,39 @@ const DropdownMenu: React.FC<DropdownProps> = ({ titleText, inputPlaceholders })
     }, [isOpen]);
 
     return (
-        <div className="inline-block w-full my-5">
-            <button 
-                onClick={toggleDropdown} 
-                className="bg-green-500 text-white py-4 px-6 text-lg border-none cursor-pointer w-full text-left"
+        <div className="flex flex-col self-center justify-center w-[80%] inline-block my-5">
+            <button
+                onClick={toggleDropdown}
+                className="bg-[#00A099] rounded-md text-white py-1 px-2 text-lg border-none cursor-pointer text-left hover:bg-[#10B0A9]"
             >
-                {titleText}
+                {titleText}<span className='mr-7'>&darr;</span>
             </button>
-            <div 
-                className={`flex flex-col overflow-hidden transition-max-height duration-300 ease-in-out w-full`} 
-                ref={contentRef} 
+            <div
+                className={`flex flex-col overflow-hidden transition-max-height duration-300 ease-in-out w-full`}
+                ref={contentRef}
                 style={{ maxHeight }}
             >
-                {inputPlaceholders.map((placeholder, index) => (
-                    <input 
-                        key={index} 
-                        type="text" 
-                        placeholder={placeholder} 
-                        className="py-3 px-4 my-1 border border-gray-300 box-border w-full" 
-                    />
+                {items.map((item, index) => (
+                    <div key={index} className="my-2">
+                        {item.type === 'input' && (
+                            <React.Fragment>
+                                <label className="block text-left mb-1 text-white text-xs lg:text-base">{item.title}</label>
+                                <input
+                                    type="number"
+                                    placeholder={item.placeholder}
+                                    className="bg-[#7DB61C] text-white py-1 px-4 w-full text-base text-center rounded-md placeholder:text-xs lg:placeholder:text-base placeholder:text-center placeholder:text-white"
+                                />
+                            </React.Fragment>
+                        )}
+                        {item.type === 'card' && (
+                            <React.Fragment>
+                                <label className="block text-left mb-1 text-white text-xs lg:text-base">{item.title}</label>
+                                <div className="p-1 w-full rounded-md bg-[#7DB61C]">
+                                    <p className="text-center text-white text-xs lg:text-base">{item.content}%</p>
+                                </div>
+                            </React.Fragment>
+                        )}
+                    </div>
                 ))}
             </div>
         </div>
