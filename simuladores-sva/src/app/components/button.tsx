@@ -14,7 +14,7 @@ const Buttons: React.FC<ButtonsProps> = (props: ButtonsProps) => {
         setTimeout(() => {
             setIsClicked(false)
         }, 100);
-        router.push('/simuladorProdutos')
+        router.push('/simuladorProdutos');
     };
 
     return (
