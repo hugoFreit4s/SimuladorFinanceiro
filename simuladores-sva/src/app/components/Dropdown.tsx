@@ -1,56 +1,50 @@
-// components/DropdownMenu.js
-import { useState } from 'react';
+// components/DropdownMenu.tsx
+import React, { useState, useRef, useEffect } from 'react';
 
-const DropdownMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface DropdownProps {
+    titleText: string;
+    inputPlaceholders: string[];
+}
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+const DropdownMenu: React.FC<DropdownProps> = ({ titleText, inputPlaceholders }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [maxHeight, setMaxHeight] = useState('0px');
+    const contentRef = useRef<HTMLDivElement>(null);
 
-  return (
-    <div className="dropdown">
-      <button onClick={toggleDropdown} className="dropdown-button">
-        Menu
-      </button>
-      {isOpen && (
-        <div className="dropdown-content">
-          <input type="text" placeholder="Input 1" className="dropdown-input" />
-          <input type="text" placeholder="Input 2" className="dropdown-input" />
-          <input type="text" placeholder="Input 3" className="dropdown-input" />
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
+
+    useEffect(() => {
+        if (contentRef.current) {
+            setMaxHeight(isOpen ? `${contentRef.current.scrollHeight}px` : '0px');
+        }
+    }, [isOpen]);
+
+    return (
+        <div className="inline-block w-full my-5">
+            <button 
+                onClick={toggleDropdown} 
+                className="bg-green-500 text-white py-4 px-6 text-lg border-none cursor-pointer w-full text-left"
+            >
+                {titleText}
+            </button>
+            <div 
+                className={`flex flex-col overflow-hidden transition-max-height duration-300 ease-in-out w-full`} 
+                ref={contentRef} 
+                style={{ maxHeight }}
+            >
+                {inputPlaceholders.map((placeholder, index) => (
+                    <input 
+                        key={index} 
+                        type="text" 
+                        placeholder={placeholder} 
+                        className="py-3 px-4 my-1 border border-gray-300 box-border w-full" 
+                    />
+                ))}
+            </div>
         </div>
-      )}
-      <style jsx>{`
-        .dropdown {
-          display: inline-block;
-          width: 100%;
-        }
-        .dropdown-button {
-          background-color: #4CAF50;
-          color: white;
-          padding: 16px;
-          font-size: 16px;
-          border: none;
-          cursor: pointer;
-          width: 100%;
-          text-align: left;
-        }
-        .dropdown-content {
-          display: flex;
-          flex-direction: column;
-          margin-top: 8px;
-          width: 100%;
-        }
-        .dropdown-input {
-          padding: 12px 16px;
-          margin: 2px 0;
-          border: 1px solid #ddd;
-          box-sizing: border-box;
-          width: 100%;
-        }
-      `}</style>
-    </div>
-  );
+    );
 };
 
 export default DropdownMenu;

@@ -13,7 +13,9 @@ export default function SimuladorProdutos() {
             <h1 className="font-sans text-2xl lg:text-4xl font-bold text-[#FFFFFF] self-center mt-3">SICOOB VALE DO AÇO</h1>
             <h2 className="font-sans text-1xl lg:text-3xl font-md text-[#FFFFFF] self-center mt-4 lg:mt-10">SIMULAÇÃO DE PRODUTOS</h2>
 
-            <Dropdown />
+            <Dropdown titleText="Máquina de Cartões" inputPlaceholders={["Taxa 1 %", "Taxa 2 %"]}/>
+            <Dropdown titleText="Seguro de Vida" inputPlaceholders={["Taxa 3 %", "Taxa 4 %"]}/>
+            <Dropdown titleText="Seguro Automotivo" inputPlaceholders={["Taxa 5 %", "Taxa 6 %"]}/>
 
             <Buttons text="SIMULAR" route='./Resultado' />
             <Footer />
