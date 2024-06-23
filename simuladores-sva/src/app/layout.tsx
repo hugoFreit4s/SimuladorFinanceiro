@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { DisableProvider } from "../../context/disableContext";
+import FormProvider from "../store/form-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,9 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <DisableProvider>
+      <FormProvider>
         <body className={inter.className}>{children}</body>
-      </DisableProvider>
+      </FormProvider>
     </html>
   );
 }

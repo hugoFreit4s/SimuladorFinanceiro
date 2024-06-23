@@ -27,7 +27,7 @@ const DropdownMenu: React.FC<DropdownProps> = ({ titleText, items }) => {
     }, [isOpen]);
 
     return (
-        <div className="flex flex-col self-center justify-center w-[80%] inline-block my-5">
+        <div className="flex flex-col self-center justify-center w-[80%] my-5">
             <button
                 onClick={toggleDropdown}
                 className="bg-[#00A099] rounded-md text-white py-1 px-2 text-lg border-none cursor-pointer text-left hover:bg-[#10B0A9]"
